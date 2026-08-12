@@ -19,14 +19,14 @@ body {
 header {
     background: linear-gradient(135deg, #374B85, #6191BD);
     color: white;
-    padding: 1rem 0;
+    padding: 16px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,14 +45,14 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -72,43 +72,46 @@ nav {
 /* Main content */
 main {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+    margin: 32px auto;
+    padding: 0 32px;
     flex: 1;
 }
 
 h1 {
     color: #1a3a5c;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
+    margin-bottom: 16px;
+    font-size: 40px;
+    text-align: center;
 }
 
 h2 {
     color: #1a3a5c;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 /* Hero section */
 .hero {
-    background: linear-gradient(135deg, #f0f7ff, #e3eef9);
-    padding: 3rem;
+    padding: 16px;
     border-radius: 10px;
-    margin-bottom: 2rem;
-    border-left: 5px solid #ff6b35;
+}
+
+.p1 {
+    text-align: center;
+    margin-bottom: 48px;
 }
 
 /* FAQ Accordion Styles */
 .faq-container {
-    margin-top: 1.5rem;
+    margin-top: 24px;
 }
 
 .faq-item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -116,7 +119,7 @@ p {
 
 .faq-question {
     background: #f8f9fa;
-    padding: 1rem 1.5rem;
+    padding: 16px 24px;
     cursor: pointer;
     font-weight: 600;
     color: #1a3a5c;
@@ -131,7 +134,7 @@ p {
 .faq-question::after {
     content: '▼';
     position: absolute;
-    right: 1.5rem;
+    right: 24px;
     transition: transform 0.3s ease;
 }
 
@@ -140,7 +143,7 @@ p {
 }
 
 .faq-answer {
-    padding: 0 1.5rem;
+    padding: 0 24px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
@@ -148,7 +151,7 @@ p {
 
 .faq-item.active .faq-answer {
     max-height: 200px;
-    padding: 1rem 1.5rem;
+    padding: 16px 24px;
 }
 
 /* Content sections */
@@ -156,7 +159,7 @@ p {
 .tv-content,
 .about-content {
     background: white;
-    padding: 2rem;
+    padding: 32px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -165,14 +168,14 @@ p {
 .tv-content ul,
 .about-content ul {
     list-style-position: inside;
-    margin: 1rem 0;
-    padding-left: 1rem;
+    margin: 16px 0;
+    padding-left: 16px;
 }
 
 .content ul li,
 .tv-content ul li,
 .about-content ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 /* Footer */
@@ -180,16 +183,16 @@ footer {
     background: #374B85;
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem;
+    padding: 24px 0;
+    margin-top: 48px;
 }
 
 footer p {
-    margin-bottom: 0.3rem;
+    margin-bottom: 4.8px;
 }
 
 .ai-acknowledgement {
-    font-size: 0.9rem;
+    font-size: 14.4px;
     opacity: 0.8;
     font-style: italic;
 }
@@ -198,25 +201,25 @@ footer p {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 8px;
     }
 
     .nav-links li a {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 4.8px 12.8px;
+        font-size: 14.4px;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 32px;
     }
 
     .hero {
-        padding: 1.5rem;
+        padding: 24px;
     }
 }
