@@ -45,6 +45,8 @@ The dataset used in this project contains information about **television models 
 
 The dataset was provided as part of the course materials.
 
+For this exercise, the course-provided television dataset was supplied as a CSV file (`tv_2026_02_15.csv`). Relevant variables from the dataset were selected according to the questions investigated in the data story.
+
 ### Data Processing
 
 Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
@@ -53,9 +55,22 @@ Before creating visualisations, the dataset was processed to ensure it was suita
 - Selecting relevant attributes for visualisation
 - Organising the data into formats suitable for web visualisation
 
+For the visualisations used in the final data story, the processing also included:
+
+- Selecting **screen size**, **labelled energy consumption**, and **screen technology** as the main variables
+- Examining the relationship between screen size and annual energy consumption
+- Grouping televisions into **small, medium, and large screen-size categories**
+- Grouping records according to screen technology, including **LCD, LCD (LED), and OLED**
+- Calculating average energy consumption for comparisons between screen-size and technology groups
+- Creating visualisations using the processed data from Exercise 2
+
+The processing was intended to simplify the dataset into information that could be clearly communicated to a non-technical audience.
+
 ### Privacy
 
 The dataset does not contain any **personal or sensitive information**. It focuses solely on product specifications and energy consumption data related to television devices.
+
+The visualisations therefore do not identify or profile individual people. The analysis is based on television product characteristics rather than personal behaviour or household-level information.
 
 ### Accuracy and Limitations
 
@@ -67,6 +82,16 @@ While the dataset provides useful information about TV energy consumption, there
 
 These factors should be considered when interpreting the visualisations.
 
+Additional limitations of the visualisations include:
+
+- The visualisations show **relationships and patterns**, but they do not prove that screen size or screen technology alone causes a particular level of energy consumption.
+- Average values used in the grouped bar chart may hide differences between individual television models.
+- Other characteristics not explored in this story may also influence television energy consumption.
+- The small, medium, and large categories simplify continuous screen-size data and therefore do not show every individual screen-size difference.
+- The results should only be interpreted within the scope of the television models represented in the dataset.
+
+For these reasons, the findings are intended to support general comparison and should not be treated as a prediction of the exact electricity consumption of every television.
+
 ### Ethics
 
 When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
@@ -76,6 +101,10 @@ This project follows ethical data visualisation practices by:
 - Avoiding misleading visual representations
 - Clearly explaining the context of the data
 - Presenting information transparently so viewers can interpret the results correctly
+
+The visualisations also avoid making unsupported claims about particular television technologies or models. For example, the grouped bar chart does not suggest that one screen technology is always the most energy-efficient because the pattern differs across screen-size categories.
+
+The story focuses on patterns that are supported by the available data and clearly communicates limitations so that consumers are not misled when interpreting the results.
 
 ---
 
@@ -88,6 +117,15 @@ Artificial Intelligence (AI) tools may have been used to assist with aspects of 
 - Assisting with documentation writing
 
 All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
+
+For Exercise 3, Generative AI was used as a supporting tool to assist with:
+
+- Structuring the webpage and data-story layout
+- Generating and refining HTML and CSS code
+- Improving the wording and readability of explanatory text
+- Organising the storyboard and README documentation
+
+The data processing, visualisations, interpretation of the results, and final submitted work were reviewed by the student. AI-generated content was checked before being included in the project.
 
 ---
 
