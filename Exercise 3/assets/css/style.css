@@ -1,26 +1,47 @@
-/* Reset and base styles */
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #333333;
     background-color: #f5f5f5;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Navigation styles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+ul {
+    margin-bottom: 16px;
+}
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
 header {
     background: linear-gradient(135deg, #374B85, #6191BD);
     color: white;
     padding: 16px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 nav {
@@ -32,144 +53,125 @@ nav {
     align-items: center;
 }
 
+/* Logo */
 .logo img {
     height: 50px;
     width: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
+    display: block;
     color: white;
     text-decoration: none;
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-/* Navigation hover effect */
 .nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.18);
     transform: translateY(-2px);
 }
 
-/* Active page indicator */
 .nav-links li a.active {
     background-color: #C24339;
     color: white;
 }
 
-/* Main content */
+/* ============================================================
+   GENERAL MAIN CONTENT
+   ============================================================ */
 main {
+    width: 100%;
     max-width: 1200px;
     margin: 32px auto;
     padding: 0 32px;
     flex: 1;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     color: #1a3a5c;
-    margin-bottom: 16px;
+}
+
+h1 {
     font-size: 40px;
+    line-height: 1.2;
     text-align: center;
+    margin-bottom: 16px;
 }
 
 h2 {
-    color: #1a3a5c;
+    font-size: 28px;
     margin-top: 32px;
     margin-bottom: 16px;
 }
 
-p {
-    margin-bottom: 16px;
+h3 {
+    margin-bottom: 12px;
 }
 
-/* Hero section */
+/* Intro Paragraph */
+.p1 {
+    max-width: 850px;
+    margin: 0 auto 48px;
+    text-align: center;
+    color: #555555;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   HOME PAGE HERO
+   ============================================================ */
 .hero {
-    padding: 16px;
+    padding: 24px 16px;
     border-radius: 10px;
 }
 
-.p1 {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-/* FAQ Accordion Styles */
-.faq-container {
-    margin-top: 24px;
-}
-
-.faq-item {
-    margin-bottom: 8px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.faq-question {
-    background: #f8f9fa;
-    padding: 16px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #1a3a5c;
-    transition: background 0.3s ease;
-    position: relative;
-}
-
-.faq-question:hover {
-    background: #e9ecef;
-}
-
-.faq-question::after {
-    content: '▼';
-    position: absolute;
-    right: 24px;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-question::after {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    padding: 0 24px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding: 16px 24px;
-}
-
-/* Content sections */
+/* ============================================================
+   GENERAL CONTENT CARDS
+   ============================================================ */
 .content,
 .tv-content,
 .about-content {
-    background: white;
+    background-color: white;
     padding: 32px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.content h2:first-child,
+.tv-content h2:first-child,
+.about-content h2:first-child {
+    margin-top: 0;
 }
 
 .content ul,
 .tv-content ul,
 .about-content ul {
-    list-style-position: inside;
-    margin: 16px 0;
-    padding-left: 16px;
+    padding-left: 24px;
+    margin: 16px 0 24px;
 }
 
 .content ul li,
@@ -178,30 +180,375 @@ p {
     margin-bottom: 8px;
 }
 
-/* Footer */
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.faq-container {
+    margin-top: 24px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.faq-question {
+    position: relative;
+    padding: 16px 50px 16px 24px;
+    background-color: #f8f9fa;
+    color: #1a3a5c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #e9ecef;
+}
+
+.faq-question::after {
+    content: "▼";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    background-color: white;
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 16px 24px;
+}
+
+/* ============================================================
+   OUR STORY PAGE
+   ============================================================ */
+.story-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+}
+
+/* ============================================================
+   OUR STORY HERO
+   ============================================================ */
+.story-hero {
+    text-align: center;
+    padding: 70px 20px 55px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.story-label,
+.section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4f718f;
+    margin-bottom: 12px;
+}
+
+.story-hero h1 {
+    font-size: 48px;
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: #1a3a5c;
+}
+
+.story-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* ============================================================
+   STORY SECTIONS
+   ============================================================ */
+.audience-section,
+.story-section {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 32px;
+    padding: 65px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.section-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #b8c0c8;
+}
+
+.audience-content,
+.story-content {
+    width: 100%;
+    max-width: 950px;
+}
+
+.audience-content h2,
+.story-content h2,
+.takeaway-section h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.audience-content>p,
+.story-question {
+    color: #444444;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   TARGET AUDIENCE QUESTION BOX
+   ============================================================ */
+.audience-question {
+    margin-top: 28px;
+    padding: 24px 28px;
+    background-color: #edf3f8;
+    border-left: 5px solid #374B85;
+    border-radius: 6px;
+}
+
+.audience-question span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #374B85;
+}
+
+.audience-question p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1a3a5c;
+}
+
+/* ============================================================
+   CHART CARDS
+   ============================================================ */
+.chart-card {
+    margin: 32px 0;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.chart-card img {
+    display: block;
+    width: 75%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.chart-caption {
+    padding: 14px 18px;
+    background-color: #f7f7f7;
+    color: #666666;
+    font-size: 14px;
+    border-top: 1px solid #eeeeee;
+}
+
+/* ============================================================
+   INSIGHT BOXES
+   ============================================================ */
+.insight-box {
+    padding: 28px;
+    background-color: #f7f9fb;
+    border-radius: 8px;
+    border-left: 4px solid #6191BD;
+}
+
+.insight-label {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #4f718f;
+}
+
+.insight-box h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    color: #1a3a5c;
+}
+
+.insight-box p {
+    margin-bottom: 14px;
+    line-height: 1.75;
+    color: #444444;
+}
+
+.insight-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   STORY TRANSITION
+   ============================================================ */
+.story-transition {
+    margin: 40px 0;
+    padding: 60px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #273c5c, #374B85);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.story-transition p:first-child {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: #cbd8e8;
+}
+
+.story-transition h2 {
+    max-width: 780px;
+    margin: 0 auto 16px;
+    color: white;
+    font-size: 31px;
+    line-height: 1.4;
+}
+
+.story-transition p:last-child {
+    margin: 0;
+    color: #e6ebf2;
+    font-size: 16px;
+}
+
+/* ============================================================
+   FINAL TAKEAWAYS
+   ============================================================ */
+.takeaway-section {
+    padding: 65px 0 20px;
+    text-align: center;
+}
+
+.takeaway-section h2 {
+    margin-bottom: 10px;
+}
+
+.takeaway-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 38px 0;
+}
+
+.takeaway-card {
+    padding: 28px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid #e2e5e8;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.takeaway-icon {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 27px;
+    font-weight: 700;
+    color: #6191BD;
+}
+
+.takeaway-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.takeaway-card p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* Final Key Message */
+.final-message {
+    max-width: 860px;
+    margin: 38px auto 0;
+    padding: 24px 30px;
+    background-color: #374B85;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
-    background: #374B85;
+    margin-top: 48px;
+    padding: 24px 20px;
+    background-color: #374B85;
     color: white;
     text-align: center;
-    padding: 24px 0;
-    margin-top: 48px;
 }
 
 footer p {
-    margin-bottom: 4.8px;
+    margin-bottom: 5px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
 }
 
 .ai-acknowledgement {
-    font-size: 14.4px;
+    font-size: 14px;
     opacity: 0.8;
     font-style: italic;
 }
 
-/* Responsive design */
+/* ============================================================
+   TABLET RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 900px) {
+    .story-hero h1 {
+        font-size: 40px;
+    }
+
+    .takeaway-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================================ */
 @media (max-width: 768px) {
+
+    /* Navigation */
     nav {
         flex-direction: column;
         gap: 16px;
+        padding: 0 20px;
     }
 
     .nav-links {
@@ -211,15 +558,159 @@ footer p {
     }
 
     .nav-links li a {
-        padding: 4.8px 12.8px;
-        font-size: 14.4px;
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    /* Main */
+    main {
+        margin: 24px auto;
+        padding: 0 20px;
     }
 
     h1 {
         font-size: 32px;
     }
 
-    .hero {
+    h2 {
+        font-size: 24px;
+    }
+
+    .content,
+    .tv-content,
+    .about-content {
         padding: 24px;
+    }
+
+    /* Story */
+    .story-page {
+        padding: 0 20px 40px;
+    }
+
+    .story-hero {
+        padding: 50px 10px 40px;
+    }
+
+    .story-hero h1 {
+        font-size: 34px;
+    }
+
+    .story-intro {
+        font-size: 16px;
+    }
+
+    .audience-section,
+    .story-section {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 48px 0;
+    }
+
+    .section-number {
+        font-size: 22px;
+    }
+
+    .audience-content h2,
+    .story-content h2,
+    .takeaway-section h2 {
+        font-size: 27px;
+    }
+
+    .story-transition {
+        padding: 45px 24px;
+    }
+
+    .story-transition h2 {
+        font-size: 25px;
+    }
+
+    .chart-caption {
+        font-size: 13px;
+    }
+
+    .insight-box {
+        padding: 22px;
+    }
+
+    .final-message {
+        padding: 22px;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+@media (max-width: 480px) {
+    nav {
+        padding: 0 16px;
+    }
+
+    .logo img {
+        height: 44px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links li a {
+        padding: 6px 9px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .p1 {
+        font-size: 15px;
+    }
+
+    .content,
+    .tv-content,
+    .about-content {
+        padding: 20px;
+    }
+
+    .story-page {
+        padding: 0 16px 35px;
+    }
+
+    .story-hero h1 {
+        font-size: 29px;
+    }
+
+    .audience-content h2,
+    .story-content h2,
+    .takeaway-section h2 {
+        font-size: 24px;
+    }
+
+    .audience-question {
+        padding: 20px;
+    }
+
+    .audience-question p {
+        font-size: 16px;
+    }
+
+    .story-transition {
+        padding: 38px 20px;
+    }
+
+    .story-transition h2 {
+        font-size: 22px;
+    }
+
+    .insight-box h3 {
+        font-size: 20px;
+    }
+
+    .takeaway-card {
+        padding: 22px;
     }
 }
