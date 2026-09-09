@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Exercise - Appliance Energy Consumption</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="svg-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/PowerIcon.png" alt="Power Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="televisions.html">Televisions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="svg.html" class="active">SVG Exercise</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="svg-intro">
+            <h1>Exercise 4.1: Draw SVGs</h1>
+            <p class="p1">This exercise demonstrates the use of SVG primitives to create and customise a house and
+                garden. The original design is shown beside a modified version to demonstrate changes to position,
+                colour, stroke, grouping and other SVG attributes.</p>
+        </section>
+        <section class="svg-comparison">
+            <article class="svg-card">
+                <h2>Before</h2>
+                <p class="svg-description">Original house and garden design using basic SVG shapes.</p>
+                <div class="svg-container">
+                    <svg viewBox="0 0 500 500" role="img" aria-label="Original SVG house and garden">
+                        <rect x="0" y="0" width="500" height="310" fill="#8ecae6"></rect>
+                        <rect x="0" y="310" width="500" height="190" fill="#2f7f25"></rect>
+                        <circle cx="405" cy="100" r="42" fill="#fff94f"></circle>
+                        <rect x="72" y="235" width="22" height="125" fill="#915024"></rect>
+                        <circle cx="64" cy="213" r="31" fill="#3f9135"></circle>
+                        <circle cx="105" cy="213" r="31" fill="#3f9135"></circle>
+                        <circle cx="84" cy="235" r="34" fill="#3f9135"></circle>
+                        <rect x="150" y="205" width="205" height="155" fill="#8c4c20"></rect>
+                        <polygon points="150,205 252,100 355,205" fill="#c98c47"></polygon>
+                        <g fill="#b9ddea" stroke="#70401f" stroke-width="3">
+                            <rect x="0" y="0" width="45" height="45" transform="translate(170,225)"></rect>
+                            <rect x="0" y="0" width="45" height="45" transform="translate(290,225)"></rect>
+                        </g>
+                        <rect x="232" y="278" width="42" height="82" fill="#a55e38"></rect>
+                        <circle cx="264" cy="319" r="5" fill="black"></circle>
+                        <path d="M255 360 C190 375, 120 405, 155 445 C180 472, 225 482, 260 500" fill="none"
+                            stroke="#ffb347" stroke-width="6"></path>
+                        <path d="M278 360 C215 380, 145 410, 175 445 C200 474, 255 485, 295 500" fill="none"
+                            stroke="#ffb347" stroke-width="6"></path>
+                        <text x="385" y="300" font-size="24" fill="black">Home</text>
+                    </svg>
+                </div>
+            </article>
+            <article class="svg-card">
+                <h2>After</h2>
+                <p class="svg-description">Customised house with changes to colours, strokes, shapes and additional
+                    garden elements.</p>
+                <div class="svg-container">
+                    <svg viewBox="0 0 500 500" role="img" aria-label="Modified SVG house and garden">
+                        <rect x="0" y="0" width="500" height="310" fill="#a9ddf3"></rect>
+                        <rect x="0" y="310" width="500" height="190" fill="#4c9638"></rect>
+                        <circle cx="420" cy="80" r="35" fill="#ffd54f" stroke="#e5a900" stroke-width="3"></circle>
+                        <g fill="white">
+                            <ellipse cx="75" cy="85" rx="32" ry="19"></ellipse>
+                            <ellipse cx="105" cy="78" rx="38" ry="25"></ellipse>
+                            <ellipse cx="140" cy="87" rx="30" ry="18"></ellipse>
+                        </g>
+                        <rect x="65" y="235" width="25" height="125" fill="#77411f" stroke="#5b3017" stroke-width="2">
+                        </rect>
+                        <ellipse cx="56" cy="210" rx="35" ry="32" fill="#438f3b"></ellipse>
+                        <ellipse cx="98" cy="205" rx="38" ry="35" fill="#438f3b"></ellipse>
+                        <ellipse cx="78" cy="235" rx="42" ry="34" fill="#438f3b"></ellipse>
+                        <rect x="148" y="205" width="210" height="155" fill="#a95d2a" stroke="#703b1b" stroke-width="4">
+                        </rect>
+                        <polygon points="138,205 253,88 370,205" fill="#c57b3c" stroke="#79441f" stroke-width="4">
+                        </polygon>
+                        <rect x="302" y="120" width="30" height="70" fill="#80502e" stroke="#57341e" stroke-width="3">
+                        </rect>
+                        <g fill="#d7f1fb" stroke="#5a321e" stroke-width="4">
+                            <rect width="48" height="48" transform="translate(170,228)"></rect>
+                            <rect width="48" height="48" transform="translate(292,228)"></rect>
+                        </g>
+                        <g stroke="#5a321e" stroke-width="2">
+                            <line x1="194" y1="228" x2="194" y2="276"></line>
+                            <line x1="170" y1="252" x2="218" y2="252"></line>
+                            <line x1="316" y1="228" x2="316" y2="276"></line>
+                            <line x1="292" y1="252" x2="340" y2="252"></line>
+                        </g>
+                        <rect x="233" y="277" width="45" height="83" fill="#7f422b" stroke="#562c1e" stroke-width="3">
+                        </rect>
+                        <circle cx="267" cy="319" r="5" fill="#ffd36a"></circle>
+                        <path d="M248 360 C185 378, 118 405, 152 445 C176 473, 220 484, 254 500" fill="none"
+                            stroke="#ead09b" stroke-width="12" stroke-linecap="round"></path>
+                        <path d="M283 360 C220 380, 154 410, 184 445 C208 474, 259 486, 298 500" fill="none"
+                            stroke="#ead09b" stroke-width="12" stroke-linecap="round"></path>
+                        <line x1="405" y1="360" x2="405" y2="395" stroke="#236d2c" stroke-width="3"></line>
+                        <circle cx="397" cy="358" r="7" fill="#ff6688"></circle>
+                        <circle cx="413" cy="358" r="7" fill="#ff6688"></circle>
+                        <circle cx="405" cy="349" r="7" fill="#ff6688"></circle>
+                        <circle cx="405" cy="366" r="7" fill="#ff6688"></circle>
+                        <polyline points="20,335 20,385 125,385 125,335" fill="none" stroke="#f4e4b8" stroke-width="8">
+                        </polyline>
+                        <line x1="50" y1="330" x2="50" y2="395" stroke="#f4e4b8" stroke-width="8"></line>
+                        <line x1="80" y1="330" x2="80" y2="395" stroke="#f4e4b8" stroke-width="8"></line>
+                        <line x1="110" y1="330" x2="110" y2="395" stroke="#f4e4b8" stroke-width="8"></line>
+
+                        <text x="365" y="300" font-size="22" font-weight="bold" fill="#17324d">My Home</text>
+                    </svg>
+                </div>
+            </article>
+        </section>
+        <section class="svg-changes">
+            <h2>Summary of Changes</h2>
+            <p>The following table compares the main elements of the original SVG with the customised version.</p>
+            <div class="svg-table-wrapper">
+                <table class="svg-table">
+                    <thead>
+                        <tr>
+                            <th>Elements</th>
+                            <th>Before</th>
+                            <th>After</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sun</strong></td>
+                            <td>Large yellow circle positioned at <code>(405, 100)</code>.</td>
+                            <td>Moved to <code>(420, 80)</code>, reduced in size and given an orange stroke.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sky</strong></td>
+                            <td>Plain light-blue rectangular background.</td>
+                            <td>Sky colour was changed and clouds were added using <code>&lt;ellipse&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>House</strong></td>
+                            <td>Brown rectangle without an outline.</td>
+                            <td>Changed to a lighter colour and a dark <code>stroke</code> was added.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Roof</strong></td>
+                            <td>Simple orange <code>&lt;polygon&gt;</code>.</td>
+                            <td>Roof was enlarged and given a darker outline.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Windows</strong></td>
+                            <td>Two simple blue rectangles.</td>
+                            <td>Both windows were placed inside a <code>&lt;g&gt;</code> element and positioned using
+                                <code>transform="translate()"</code>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tree</strong></td>
+                            <td>Leaves were created using circles.</td>
+                            <td>Leaves were changed to ellipses and a stroke was added to the trunk.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Garden Path</strong></td>
+                            <td>Thin orange curved paths.</td>
+                            <td>Changed to wider beige paths with rounded ends.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Door</strong></td>
+                            <td>Plain brown door with black door knob.</td>
+                            <td>Added a dark border and changed the door knob to gold.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Additional Elements</strong></td>
+                            <td>No clouds, chimney, fence or flowers.</td>
+                            <td>Clouds, chimney, flowers and a fence were added to customise the garden.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Text</strong></td>
+                            <td>Displays the text "House".</td>
+                            <td>Changed to "My Home" with bold text and a different colour.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coordinates</strong></td>
+                            <td>Roof coordinate <code>(150, 205)</code> is annotated.</td>
+                            <td>Sun centre coordinate <code>(420, 80)</code> is annotated.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="svg-elements">
+            <h2>SVG Elements Used</h2>
+            <p>The SVG drawings demonstrate a range of SVG primitives:</p>
+            <ul>
+                <li><code>&lt;rect&gt;</code> — house, door, trunk and background</li>
+                <li><code>&lt;circle&gt;</code> — sun, leaves and flowers</li>
+                <li><code>&lt;ellipse&gt;</code> — clouds and modified tree leaves</li>
+                <li><code>&lt;line&gt;</code> — window details and coordinate annotations</li>
+                <li><code>&lt;polyline&gt;</code> — garden fence</li>
+                <li><code>&lt;polygon&gt;</code> — roof</li>
+                <li><code>&lt;path&gt;</code> — curved garden path</li>
+                <li><code>&lt;text&gt;</code> — labels and coordinate information</li>
+                <li><code>&lt;g&gt;</code> — grouping and styling the two windows</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Tan Yi Chin</p>
+        <p class="ai-acknowledgement">AI Acknowledgement: This website was created with assistance from Generative AI
+            tools.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
