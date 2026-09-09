@@ -200,19 +200,14 @@ footer p {
 /* =====================================================
    EXERCISE 4.1 - SVG PAGE
    ===================================================== */
-
-
 /* Main SVG Introduction */
-
 .svg-intro {
     margin-bottom: 30px;
 }
 
-
 /* =====================================================
    BEFORE / AFTER AREA
    ===================================================== */
-
 .svg-comparison {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -220,20 +215,14 @@ footer p {
     margin-bottom: 40px;
 }
 
-
 /* Each SVG card */
-
 .svg-card {
     background-color: white;
-
     border: 1px solid #dddddd;
     border-radius: 8px;
-
     padding: 20px;
-
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
 
 .svg-card h2 {
     text-align: center;
@@ -241,162 +230,122 @@ footer p {
     margin-bottom: 8px;
 }
 
-
 .svg-description {
     text-align: center;
     color: #666666;
-
     margin-top: 0;
     margin-bottom: 18px;
 }
 
-
 /* SVG drawing area */
-
 .svg-container {
     width: 100%;
-
     border: 1px solid #cccccc;
     border-radius: 5px;
-
     overflow: hidden;
-
     background-color: white;
 }
 
-
 .svg-container svg {
     display: block;
-
     width: 100%;
     height: auto;
 }
 
-
 /* =====================================================
    CHANGES SECTION
    ===================================================== */
-
 .svg-changes {
     margin-top: 20px;
     margin-bottom: 40px;
 }
 
-
 .svg-changes h2 {
     margin-bottom: 10px;
 }
 
-
 /* Allows table to scroll on small devices */
-
 .svg-table-wrapper {
     width: 100%;
     overflow-x: auto;
-
     margin-top: 20px;
 }
 
-
 /* Table */
-
 .svg-table {
     width: 100%;
-
     border-collapse: collapse;
-
     background-color: white;
 }
-
 
 .svg-table th,
 .svg-table td {
     border: 1px solid #cccccc;
-
     padding: 14px;
-
     text-align: left;
     vertical-align: top;
 }
 
-
 /* Table heading */
-
 .svg-table th {
     background-color: #333333;
     color: white;
-
     text-align: center;
 }
 
-
 /* Alternating row */
-
 .svg-table tbody tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
-
 /* Hover effect */
-
 .svg-table tbody tr:hover {
     background-color: #eeeeee;
 }
 
-
 /* First column */
-
 .svg-table td:first-child {
     width: 18%;
 }
 
-
-/* Code labels */
-
-.svg-page code {
-    background-color: #eeeeee;
-
-    padding: 2px 5px;
-
-    border-radius: 3px;
-
-    font-family: Consolas, monospace;
+.svg-table td:nth-child(2),
+.svg-table td:nth-child(3) {
+    width: 41%;
 }
 
+/* Code labels */
+.svg-page code {
+    background-color: #eeeeee;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+}
 
 /* =====================================================
    SVG ELEMENTS SECTION
    ===================================================== */
-
 .svg-elements {
     margin-bottom: 40px;
 }
-
 
 .svg-elements ul {
     line-height: 1.8;
 }
 
-
 /* =====================================================
    RESPONSIVE DESIGN
    ===================================================== */
-
 @media screen and (max-width: 800px) {
 
     /* Stack SVG pictures vertically */
-
     .svg-comparison {
         grid-template-columns: 1fr;
     }
 
-
     /* Smaller table font */
-
     .svg-table {
         font-size: 14px;
     }
-
 }
 
 /* Responsive design */
