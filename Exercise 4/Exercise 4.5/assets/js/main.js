@@ -21,3 +21,27 @@ d3.csv("assets/data/2026TVData.csv", d => {
         data.sort((a, b) => b.count - a.count); //sort data from largest to smallest "b.count - a.count" = "largest -> smallest"
         drawBarChart(data);
     });
+
+
+// --- function to build the chart ---//
+// create an svg object that selects the elements 
+// we want (rectangles) to add to represent our data 
+const drawBarChart = data => {
+
+    const barHeight = 20;
+    const barSpacing = 5;
+
+    svg
+        .selectAll("rect")
+        .data(data) //pass data into selection
+        .join("rect") //join it to selected elements (rectangles)
+        .attr("class", d => { //assign attribute to bar rectangles
+            console.log(d);
+            return `bar bar-${d.count}`; //associate with the count data
+        })
+        .attr("width", d => d.count) //make width depends on d.count (d represent one row of data)
+        .attr("height", barHeight)
+        .attr("fill", "blue")
+        .attr("x", 0)
+        .attr("y", (d, i) => i * (barHeight + barSpacing)) //i = the row number/index
+};
