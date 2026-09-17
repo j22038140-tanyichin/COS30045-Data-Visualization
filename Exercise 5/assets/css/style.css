@@ -210,6 +210,16 @@ p {
     fill: rgb(70, 0, 119);
 }
 
+/*DONUT CHART*/
+.slice {
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.donut-label {
+    font-size: 13px;
+    font-weight: bold;
+}
 
 /* Footer */
 footer {
