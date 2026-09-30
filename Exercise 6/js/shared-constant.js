@@ -24,10 +24,25 @@ const barColor = "steelblue";
 const bodyBackgroundColor = "white";
 
 
-// Scales
+// Scales - Histogram
 const xScale = d3.scaleLinear();
 const yScale = d3.scaleLinear();
 
+// Scatterplot innerchart
+let innerChartS;
+
+// If reuse the same scales, 
+// one chart could overwrite the other's settings.
+// Scales - SCatterplot
+const xScaleS = d3.scaleLinear();
+const yScaleS = d3.scaleLinear();
+
+// Set up tooltip dimensions
+const tooltipWidth = 65;
+const tooltipHeight = 32;
+
+// Scatterplot colour scale
+const colorScale = d3.scaleOrdinal();
 
 // Histogram bin generator
 const binGenerator = d3.bin() //d3 count how many TVs fall into each range

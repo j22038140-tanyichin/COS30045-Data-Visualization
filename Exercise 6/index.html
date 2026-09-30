@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Appliance Energy Consumption</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/visualisation.css">
 
 </head>
 
@@ -49,6 +50,15 @@
             <div id="filters_screen"></div>
 
             <div id="histogram" class="responsive-svg-container"></div>
+
+            <!--Scatterplot-->
+            <h2>Energy Consumption by Star Rating</h2>
+
+            <p>This scatterplot shows the relationship between television
+                star rating and energy consumption. Colours represent different
+                screen technologies.</p>
+
+            <div id="scatterplot" class="responsive-svg-container"></div>
 
             <!--FAQ-->
             <h2>Frequently Asked Questions</h2>
@@ -94,6 +104,7 @@
     <script src="js/shared-constant.js"></script>
     <script src="js/interactions.js"></script>
     <script src="js/histogram.js"></script>
+    <script src="js/scatterplot.js"></script>
 
 </body>
 
