@@ -20,7 +20,6 @@ const updateHistogram = (filterId, data) => {
         .ease(d3.easeCubicInOut)
         .attr("y", d => yScale(d.length))
         .attr("height", d => innerHeight - yScale(d.length));
-
 };
 
 //create historgram tooltip
@@ -109,10 +108,7 @@ const handleHistogramMouseEvent = () => {
 
             // Show tooltip
             d3.select(".histogram-tooltip")
-                .attr(
-                    "transform",
-                    `translate(${tooltipX}, ${tooltipY})`
-                )
+                .attr("transform", `translate(${tooltipX}, ${tooltipY})`)
                 .transition()
                 .duration(200)
                 .style("opacity", 1);
@@ -124,6 +120,39 @@ const handleHistogramMouseEvent = () => {
                 .duration(200)
                 .style("opacity", 0);
         });
+};
+
+// ======= SCATTERPLOT ============ // 
+
+// Scatterplot filter
+const updateScatterplot = (filterId, data) => {
+
+    // all data if "all"
+    // otherwise filter by screen technology
+    const updatedData = filterId === "all"
+        ? data
+        : data.filter(
+            tv => tv.screenTech === filterId
+        );
+
+    // update scatterplot circles
+    innerChartS
+        .selectAll(".scatter-point")
+        .data(updatedData)
+        .join("circle")
+        .attr("class", "scatter-point")
+        .attr("r", 4)
+        .attr("cx", d => xScaleS(d.star))
+        .attr("cy", d => yScaleS(d.energyConsumption))
+        .attr("fill", d => colorScale(d.screenTech))
+        .attr("opacity", 0.5);
+
+    // New circles need mouse events
+    handleMouseEvent();
+
+    // Keep tooltip above the circles
+    d3.select(".scatter-tooltip")
+        .raise();
 };
 
 //create scatterplot tooltip
@@ -158,7 +187,7 @@ const createTooltip = () => {
 //handle mouse event
 const handleMouseEvent = () => {
     innerChartS
-        .selectAll("circle")//select all circles from scatterplot
+        .selectAll("scatter-point")//select all circles from scatterplot
         .on("mouseenter", (e, d) => {
 
             const tooltipText =
@@ -242,7 +271,10 @@ const populateFilters = data => {
                 d3.selectAll("#filters_screen .filter")
                     .classed("active", filter => filter.id === d.id ? true : false);
 
+                //filter histogram
                 updateHistogram(d.id, data);
+                //filter scatterplot
+                updateScatterplot(d.id, data);
             }
         });
 

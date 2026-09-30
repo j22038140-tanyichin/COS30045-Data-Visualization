@@ -31,14 +31,15 @@ const drawScatterplot = data => {
 
     //Draw circle
     innerChartS
-        .selectAll("circle")
+        .selectAll(".scatter-point")
         .data(data)
         .join("circle")
+        .attr("class", "scatter-point")
         .attr("r", 4)
         .attr("cx", d => xScaleS(d.star))
         .attr("cy", d => yScaleS(d.energyConsumption))
         .attr("fill", d => colorScale(d.screenTech))
-        .attr("opacity", 0.5)
+        .attr("opacity", 0.5);
 
     //Add x-axis
     const bottomAxis = d3.axisBottom(xScaleS);
