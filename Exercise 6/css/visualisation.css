@@ -1,0 +1,15 @@
+.responsive-svg-container {
+    width: 100%;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.histogram-bar {
+    fill: steelblue;
+}
+
+.axis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
