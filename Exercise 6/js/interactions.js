@@ -69,10 +69,9 @@ const handleMouseEvent = () => {
             let tooltipX = circleX + 10;
             let tooltipY = circleY - tooltipHeight - 10;
 
-            // if tooltip goes outside right edge,
-            // place it on the left instead
+            // If the circle position + tooltip width greater than the chart width
             if (circleX + tooltipWidth + 10 > innerWidth) {
-                tooltipX = circleX - tooltipWidth - 10;
+                tooltipX = circleX - tooltipWidth - 10; //move tooltip to the left of circle
             }
 
             //move tooltip near to circle
