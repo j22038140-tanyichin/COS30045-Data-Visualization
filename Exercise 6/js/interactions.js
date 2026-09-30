@@ -23,6 +23,109 @@ const updateHistogram = (filterId, data) => {
 
 };
 
+//create historgram tooltip
+const createHistogramTooltip = () => {
+
+    // select the innerChart of histogram
+    const histogramInnerChart = d3.select("#histogram svg > g");
+
+    const tooltip = histogramInnerChart
+        .append("g")
+        .attr("class", "histogram-tooltip")
+        .style("opacity", 0);
+
+    // tooltip rectangle
+    tooltip
+        .append("rect")
+        .attr("width", histogramTooltipWidth)
+        .attr("height", histogramTooltipHeight)
+        .attr("rx", 3)
+        .attr("ry", 3)
+        .attr("fill", "purple")
+        .attr("opacity", 0.9);
+
+    // tooltip text
+    tooltip
+        .append("text")
+        .attr("class", "histogram-tooltip-text")
+        .attr("x", histogramTooltipWidth / 2)
+        .attr("y", histogramTooltipHeight / 2)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .style("fill", "white")
+        .style("font-size", "12px");
+};
+
+//handle histogram tooltip mouse event
+const handleHistogramMouseEvent = () => {
+    d3.selectAll("#histogram .histogram-bar")
+        .on("mouseenter", (e, d) => {
+            const tooltipText =
+                d3.select(".histogram-tooltip-text");
+
+            tooltipText.text("");
+
+            // Energy range
+            tooltipText
+                .append("tspan")
+                .attr("x", histogramTooltipWidth / 2)
+                .attr("dy", "-0.6em")
+                .text(`Energy: ${d.x0} - ${d.x1}`);
+
+            // Frequency
+            tooltipText
+                .append("tspan")
+                .attr("x", histogramTooltipWidth / 2)
+                .attr("dy", "1.4em")
+                .text(`Number of TVs: ${d.length}`);
+
+
+            // Get bar position
+            const barX = +e.currentTarget.getAttribute("x");
+            const barY = +e.currentTarget.getAttribute("y");
+            const barWidth = +e.currentTarget.getAttribute("width");
+
+            // Position tooltip above centre of bar
+            let tooltipX = barX + barWidth / 2 - histogramTooltipWidth / 2;
+            let tooltipY = barY - histogramTooltipHeight - 10;
+
+            // Prevent going outside left side
+            if (tooltipX < 0) {
+                tooltipX = 0;
+            }
+
+            // Prevent going outside right side
+            if (
+                tooltipX + histogramTooltipWidth > innerWidth
+            ) {
+                tooltipX = innerWidth - histogramTooltipWidth;
+            }
+
+            // Prevent going outside top
+            if (tooltipY < 0) {
+                tooltipY =
+                    barY + 10;
+            }
+
+            // Show tooltip
+            d3.select(".histogram-tooltip")
+                .attr(
+                    "transform",
+                    `translate(${tooltipX}, ${tooltipY})`
+                )
+                .transition()
+                .duration(200)
+                .style("opacity", 1);
+        })
+
+        .on("mouseleave", () => {
+            d3.select(".histogram-tooltip")
+                .transition()
+                .duration(200)
+                .style("opacity", 0);
+        });
+};
+
 //create scatterplot tooltip
 const createTooltip = () => {
     const tooltip = innerChartS
@@ -38,7 +141,7 @@ const createTooltip = () => {
         .attr("rx", 3) //makes rectanlge corner rounded
         .attr("ry", 3)
         .attr("fill", barColor)
-        .attr("opacity", 0.75);
+        .attr("opacity", 0.9);
 
     //add tooltip text
     tooltip

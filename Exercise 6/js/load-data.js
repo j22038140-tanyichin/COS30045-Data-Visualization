@@ -15,4 +15,7 @@ d3.csv("data/Ex6_TVdata_withStar.csv", d => {
     drawScatterplot(data);
     createTooltip();
     handleMouseEvent();
+
+    createHistogramTooltip();
+    handleHistogramMouseEvent();
 });

@@ -41,6 +41,10 @@ const yScaleS = d3.scaleLinear();
 const tooltipWidth = 200;
 const tooltipHeight = 85;
 
+// Histogram tooltip size
+const histogramTooltipWidth = 170;
+const histogramTooltipHeight = 60;
+
 // Scatterplot colour scale
 const colorScale = d3.scaleOrdinal();
 
