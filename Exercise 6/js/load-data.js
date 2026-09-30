@@ -4,7 +4,7 @@ d3.csv("data/Ex6_TVdata_withStar.csv", d => {
         brand: d.brand,
         model: d.model,
         screenSize: +d.screenSize, //convert to number
-        screenTech: d.screenTech,
+        screenTech: d.screenTech.toLowerCase(),
         energyConsumption: +d.energyConsumption //convert to number
     };
 }).then(data => {

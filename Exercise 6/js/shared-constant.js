@@ -35,7 +35,7 @@ const binGenerator = d3.bin() //d3 count how many TVs fall into each range
     .thresholds(14);
 
 //filter information
-const screenFilters = [
+const filters_screen = [
     {
         id: "all",
         label: "All",
