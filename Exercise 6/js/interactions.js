@@ -23,6 +23,79 @@ const updateHistogram = (filterId, data) => {
 
 };
 
+//create scatterplot tooltip
+const createTooltip = () => {
+    const tooltip = innerChartS
+        .append("g")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    //add tooltip rectangle
+    tooltip
+        .append("rect")
+        .attr("width", tooltipWidth)
+        .attr("height", tooltipHeight)
+        .attr("rx", 3) //makes rectanlge corner rounded
+        .attr("ry", 3)
+        .attr("fill", barColor)
+        .attr("opacity", 0.75);
+
+    //add tooltip text
+    tooltip
+        .append("text")
+        .attr("x", tooltipWidth / 2)
+        .attr("y", tooltipHeight / 2)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .style("fill", "white")
+        .style("font-size", "12px");
+};
+
+//handle mouse event
+const handleMouseEvent = () => {
+    innerChartS
+        .selectAll("circle")//select all circles from scatterplot
+        .on("mouseenter", (e, d) => {
+
+            d3.select(".tooltip text")
+                .text(`Screen Size: ${d.screenSize}"`);
+
+            ////get circle position
+            const circleX = +e.currentTarget.getAttribute("cx");
+            const circleY = +e.currentTarget.getAttribute("cy");
+
+            // default position:
+            // right and above the circle
+            let tooltipX = circleX + 10;
+            let tooltipY = circleY - tooltipHeight - 10;
+
+            // if tooltip goes outside right edge,
+            // place it on the left instead
+            if (circleX + tooltipWidth + 10 > innerWidth) {
+                tooltipX = circleX - tooltipWidth - 10;
+            }
+
+            //move tooltip near to circle
+            d3.select(".tooltip")
+                .attr("transform", `translate(${tooltipX},${tooltipY})`)
+                //make visible with transition
+                .transition()
+                .duration(200)
+                .style("opacity", 1);
+
+            console.log("Mouse entered:", e);
+            console.log("TV data:", d);
+        })
+
+        .on("mouseleave", () => {
+            d3.select(".tooltip")
+                .transition()
+                .duration(200)
+                .style("opacity", 0);
+
+        })
+}
+
 const populateFilters = data => {
     //every item in filters_screen, create 1 button
     const buttons = d3.select("#filters_screen")

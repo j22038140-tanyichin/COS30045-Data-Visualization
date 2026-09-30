@@ -14,5 +14,5 @@ d3.csv("data/Ex6_TVdata_withStar.csv", d => {
     populateFilters(data);
     drawScatterplot(data);
     createTooltip();
-    handleMouseEvents();
+    handleMouseEvent();
 });

@@ -101,6 +101,4 @@ const drawScatterplot = data => {
         .attr("x", 20)
         .attr("y", 11)
         .text(d => d.toUpperCase());
-
-
 };
