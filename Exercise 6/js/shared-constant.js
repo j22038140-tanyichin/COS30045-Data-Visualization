@@ -38,8 +38,8 @@ const xScaleS = d3.scaleLinear();
 const yScaleS = d3.scaleLinear();
 
 // Set up tooltip dimensions
-const tooltipWidth = 120;
-const tooltipHeight = 40;
+const tooltipWidth = 200;
+const tooltipHeight = 85;
 
 // Scatterplot colour scale
 const colorScale = d3.scaleOrdinal();

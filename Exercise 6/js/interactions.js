@@ -27,7 +27,7 @@ const updateHistogram = (filterId, data) => {
 const createTooltip = () => {
     const tooltip = innerChartS
         .append("g")
-        .attr("class", "tooltip")
+        .attr("class", "scatter-tooltip")
         .style("opacity", 0);
 
     //add tooltip rectangle
@@ -43,6 +43,7 @@ const createTooltip = () => {
     //add tooltip text
     tooltip
         .append("text")
+        .attr("class", "scatter-tooltip-text")
         .attr("x", tooltipWidth / 2)
         .attr("y", tooltipHeight / 2)
         .attr("text-anchor", "middle")
@@ -57,7 +58,29 @@ const handleMouseEvent = () => {
         .selectAll("circle")//select all circles from scatterplot
         .on("mouseenter", (e, d) => {
 
-            d3.select(".tooltip text")
+            const tooltipText =
+                d3.select(".scatter-tooltip-text");
+
+            // remove old text
+            tooltipText.text("");
+
+            //brand
+            tooltipText
+                .append("tspan")
+                .attr("x", tooltipWidth / 2)
+                .attr("dy", "-1.2em")
+                .text(`Brand: ${d.brand}`);
+            //model
+            tooltipText
+                .append("tspan")
+                .attr("x", tooltipWidth / 2)
+                .attr("dy", "1.4em")
+                .text(`Model: ${d.model}`);
+            //screen size
+            tooltipText
+                .append("tspan")
+                .attr("x", tooltipWidth / 2)
+                .attr("dy", "1.4em")
                 .text(`Screen Size: ${d.screenSize}"`);
 
             ////get circle position
@@ -75,7 +98,7 @@ const handleMouseEvent = () => {
             }
 
             //move tooltip near to circle
-            d3.select(".tooltip")
+            d3.select(".scatter-tooltip")
                 .attr("transform", `translate(${tooltipX},${tooltipY})`)
                 //make visible with transition
                 .transition()
@@ -87,7 +110,7 @@ const handleMouseEvent = () => {
         })
 
         .on("mouseleave", () => {
-            d3.select(".tooltip")
+            d3.select(".scatter-tooltip")
                 .transition()
                 .duration(200)
                 .style("opacity", 0);

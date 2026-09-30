@@ -1,7 +1,7 @@
 // js/load-data.js
 d3.csv("data/Ex6_TVdata_withStar.csv", d => {
     return {
-        brand: d.brand,
+        brand: d.brand.toUpperCase(),
         model: d.model,
         screenSize: +d.screenSize, //convert to number
         screenTech: d.screenTech.toLowerCase(),
