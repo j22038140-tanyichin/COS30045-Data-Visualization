@@ -1,4 +1,6 @@
 // js/interactions.js
+
+//filter by screen tech
 const updateHistogram = (filterId, data) => {
     // use all data if "all" is selected
     // otherwise filter according to screen technology
@@ -13,6 +15,23 @@ const updateHistogram = (filterId, data) => {
     const updatedBins = binGenerator(updatedData);
 
     // update histogram bars
+    d3.selectAll("#histogram .histogram-bar")
+        .data(updatedBins)
+        .transition()
+        .duration(500)
+        .ease(d3.easeCubicInOut)
+        .attr("y", d => yScale(d.length))
+        .attr("height", d => innerHeight - yScale(d.length));
+};
+
+//filter by screen size
+const updateHistogramSize = (filterId, data) => {
+    const updatedData = filterId === "all"
+        ? data
+        : data.filter(tv => tv.screenSize === filterId);
+
+    const updatedBins = binGenerator(updatedData);
+
     d3.selectAll("#histogram .histogram-bar")
         .data(updatedBins)
         .transition()
@@ -252,7 +271,7 @@ const handleMouseEvent = () => {
 
 const populateFilters = data => {
     //every item in filters_screen, create 1 button
-    const buttons = d3.select("#filters_screen")
+    d3.select("#filters_screen")
         .selectAll("button")
         .data(filters_screen)
         .join("button")
@@ -277,5 +296,24 @@ const populateFilters = data => {
                 updateScatterplot(d.id, data);
             }
         });
+};
 
+const populateSizeFilters = data => {
+    d3.select("#filters_size")
+        .selectAll("button")
+        .data(filters_size)
+        .join("button")
+        .attr("class", d => `filter ${d.isActive ? "active" : ""}`)
+        .text(d => d.label)
+        .on("click", (e, d) => {
+            if (!d.isActive) {
+                filters_size.forEach(filter => {
+                    filter.isActive = d.id === filter.id ? true : false;
+                });
+
+                d3.selectAll("#filters_size .filter")
+                    .classed("active", filter => filter.id === d.id ? true : false);
+                updateHistogramSize(d.id, data);
+            }
+        });
 };

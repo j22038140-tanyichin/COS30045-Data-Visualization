@@ -53,7 +53,7 @@ const binGenerator = d3.bin() //d3 count how many TVs fall into each range
     .value(d => d.energyConsumption)
     .thresholds(14);
 
-//filter information
+//filter screen tech
 const filters_screen = [
     {
         id: "all",
@@ -73,6 +73,40 @@ const filters_screen = [
     {
         id: "oled",
         label: "OLED",
+        isActive: false
+    }
+];
+
+//filter screen size
+const filters_size = [
+    {
+        id: "all",
+        label: "All",
+        isActive: true
+    },
+    {
+        id: 24,
+        label: '24"',
+        isActive: false
+    },
+    {
+        id: 32,
+        label: '32"',
+        isActive: false
+    },
+    {
+        id: 55,
+        label: '55"',
+        isActive: false
+    },
+    {
+        id: 65,
+        label: '65"',
+        isActive: false
+    },
+    {
+        id: 98,
+        label: '98"',
         isActive: false
     }
 ];

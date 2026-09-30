@@ -1,3 +1,6 @@
+/* ========================================= */
+/* CHART CONTAINER */
+/* ========================================= */
 .responsive-svg-container {
     width: 100%;
     max-width: 850px;
@@ -5,11 +8,152 @@
     margin-right: auto;
 }
 
+/* Make SVG resize with the page */
+.responsive-svg-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================= */
+/* FILTER LABEL */
+/* ========================================= */
+.filter-label {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #374B85;
+    margin-bottom: 10px;
+}
+
+/* ========================================= */
+/* SCREEN SIZE FILTER */
+/* ========================================= */
+.size-filter-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#filters_size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ========================================= */
+/* SCREEN TECHNOLOGY FILTER BOX */
+/* ========================================= */
+.screen-tech-filter-section {
+    max-width: 600px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Small explanation below heading */
+.filter-description {
+    font-size: 13px;
+    color: #777;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+/* Screen technology buttons */
+#filters_screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ========================================= */
+/* FILTER BUTTON */
+/* ========================================= */
+.filter {
+    padding: 9px 18px;
+    border: 2px solid #374B85;
+    border-radius: 7px;
+    background-color: white;
+    color: #374B85;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Filter hover */
+.filter:hover {
+    background-color: #e8eef7;
+    transform: translateY(-2px);
+    box-shadow:
+        0 3px 7px rgba(0, 0, 0, 0.12);
+}
+
+/* Active filter */
+.filter.active {
+    background-color: #C24339;
+    border-color: #C24339;
+    color: white;
+    box-shadow:
+        0 3px 8px rgba(194, 67, 57, 0.25);
+}
+
+/* Active filter hover */
+.filter.active:hover {
+    background-color: #a9362e;
+    border-color: #a9362e;
+}
+
+/* ========================================= */
+/* HISTOGRAM */
+/* ========================================= */
 .histogram-bar {
     fill: steelblue;
 }
 
+/* ========================================= */
+/* AXIS LABEL */
+/* ========================================= */
 .axis-label {
     font-size: 14px;
     font-weight: bold;
+}
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+@media (max-width: 768px) {
+
+    /* Reduce button size */
+    .filter {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* Smaller gaps between buttons */
+    #filters_screen,
+    #filters_size {
+        gap: 8px;
+    }
+
+    /* Technology filter box */
+    .screen-tech-filter-section {
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
