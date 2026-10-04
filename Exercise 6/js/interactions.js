@@ -78,6 +78,9 @@ const createHistogramTooltip = () => {
 const handleHistogramMouseEvent = () => {
     d3.selectAll("#histogram .histogram-bar")
         .on("mouseenter", (e, d) => {
+            console.log("Mouse entered:", e);
+            console.log("TV data:", d);
+
             const tooltipText =
                 d3.select(".histogram-tooltip-text");
 
@@ -206,8 +209,10 @@ const createTooltip = () => {
 //handle mouse event
 const handleMouseEvent = () => {
     innerChartS
-        .selectAll("scatter-point")//select all circles from scatterplot
+        .selectAll(".scatter-point")//select all circles from scatterplot
         .on("mouseenter", (e, d) => {
+            console.log("Mouse entered:", e);
+            console.log("TV data:", d);
 
             const tooltipText =
                 d3.select(".scatter-tooltip-text");
@@ -255,9 +260,6 @@ const handleMouseEvent = () => {
                 .transition()
                 .duration(200)
                 .style("opacity", 1);
-
-            console.log("Mouse entered:", e);
-            console.log("TV data:", d);
         })
 
         .on("mouseleave", () => {
